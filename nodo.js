@@ -21,16 +21,20 @@ function busqueda(inicio, destino, arbol) {
     let valor = 0;
     arbol.forEach(i => {
         if (i.nombre == inicio) {
-           recorrido.push(i.nombre);
-           if(arbol.hijos != null){
-            valor = arbol.valorDestino;
-            recorrido.push(i.nombre); 
-           }else{
-            if(i.nombre== destino){
+            recorrido.push(i.nombre);
+            valor = destino;
+            i.hijos.forEach(K => {
+                if (arbol.hijos != null && arbol.destino <= valor) {
+                    valor = arbol.valorDestino;
+                    recorrido.push(i.nombre);
+                }
+            });
+        } else {
+            if (i.nombre == destino) {
                 recorrido.push(i.nombre);
-            } 
-            }   
+            }
         }
+
     });
     return recorrido;
 }
