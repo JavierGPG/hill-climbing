@@ -22,14 +22,19 @@ function busqueda(inicio, destino, arbol) {
     arbol.forEach(i => {
         if (i.nombre == inicio) {
            recorrido.push(i.nombre);
-           if(arbol.hijos != null && i.nombre != inicio){
+           if(arbol.hijos != null){
             valor = arbol.valorDestino;
             recorrido.push(i.nombre); 
-           } 
+           }else{
+            if(i.nombre== destino){
+                recorrido.push(i.nombre);
+            } 
+            }   
         }
     });
     return recorrido;
 }
+
 
 /**
  * if (arbol.hijo != null) {
