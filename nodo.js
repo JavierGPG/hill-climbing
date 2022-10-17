@@ -20,6 +20,7 @@ function busqueda(inicio, destino, arbol) {
     let recorrido = new Array();
     let valor = 0;
     arbol.forEach(i => {
+        
         if (i.nombre == inicio) {
             recorrido.push(i.nombre);
             valor = destino;
