@@ -18,16 +18,25 @@ function busqueda(inicio, destino, arbol) {
     //let recorrido = new Array(); 
     //recorrido.push(i.nombre) <- guadra el recorrido en un array
     let recorrido = new Array();
+    let valor = 0;
     arbol.forEach(i => {
         if (i.nombre == inicio) {
-            if (arbol.hijo != null) {
+           recorrido.push(i.nombre);
+           if(arbol.hijos != null && i.nombre != inicio){
+            valor = arbol.valorDestino;
+            recorrido.push(i.nombre); 
+           } 
+        }
+    });
+    return recorrido;
+}
+
+/**
+ * if (arbol.hijo != null) {
                 recorrido.push(i.nombre);
             } else {
                 if (arbol.hijo == null || inicio.nombre == destino) {
                     recorrido.push(i.nombre);
                 }
             }
-        }
-    });
-    return recorrido;
-}
+ */
